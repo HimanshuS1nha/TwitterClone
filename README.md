@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+# TWITTER CLONE
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Discover a new social experience on our Twitter clone website! Share your thoughts, connect with friends, and stay up-to-date with trending topics in real-time. Join our vibrant online community today.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Screenshots
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![Twitter1](https://github.com/HimanshuS1nha/TwitterClone/assets/97872929/1cd2260e-91a9-436e-89ed-6103a2203363)
 
-## Learn More
+![Twitter2](https://github.com/HimanshuS1nha/TwitterClone/assets/97872929/437ae46b-beaf-4e13-8563-eee0bed40f79)
 
-To learn more about Next.js, take a look at the following resources:
+![Twiiter3](https://github.com/HimanshuS1nha/TwitterClone/assets/97872929/3531ccfa-f4e9-4ff8-a639-8dfe6ee5beed)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Features
 
-## Deploy on Vercel
+ - Login/Signup
+ - Middleware to protect routes
+ - Creating, liking and commenting on tweets
+ - Following, Unfollowing people
+ - Editing profile
+ - Light/Dark mode toggle
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## TECH STACK USED
+
+ - Next.js
+ - Tailwind CSS
+ - Next-Auth.js
+ - Prisma
+ - Postgres
+ - NextUI
+
+
+## Demo
+
+Live Demo - [Click Here](https://twittercloneapp.vercel.app)
+
+
+## 🚀 About Me
+My name is Himanshu Sinha and I'm a full stack developer.
+

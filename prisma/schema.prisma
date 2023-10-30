@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL") // uses connection pooling
+  directUrl = env("DATABASE_URL_NON_POOLING") // uses a direct connection
+}
+
+model Users {
+  id              String   @id @default(uuid())
+  name            String
+  email           String   @unique
+  username        String   @unique
+  password        String?
+  image           String?
+  bannerImage     String?
+  bio             String?
+  following       String[]
+  followers       String[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  Tweet         Tweets[]
+  Comments      Comments[]
+  Notifications Notifications[]
+
+  @@index([id, email, username])
+}
+
+model Tweets {
+  id        String   @id @default(uuid())
+  userId    String
+  content   String
+  likedBy   String[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  comments Comments[]
+  user     Users      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Comments {
+  id        String   @id @default(uuid())
+  content   String
+  userId    String
+  tweetId   String
+  likedBy   String[]
+  createdAt DateTime @default(now())
+
+  tweet Tweets @relation(fields: [tweetId], references: [id], onDelete: Cascade)
+  user  Users  @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Notifications {
+  id             String   @id @default(uuid())
+  userId         String
+  notificationBy String
+  content        String
+  createdAt      DateTime @default(now())
+
+  user Users @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
