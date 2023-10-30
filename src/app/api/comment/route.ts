@@ -49,7 +49,7 @@ export const POST = async (req: NextRequest) => {
         userId: tweet?.userId,
       },
     });
-    if (!notification || session?.user.id !== tweet?.userId) {
+    if (!notification && session?.user.id !== tweet?.userId) {
       await prisma.notifications.create({
         data: {
           notificationBy: session?.user.id!,

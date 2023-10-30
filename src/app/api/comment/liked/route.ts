@@ -56,7 +56,7 @@ export const POST = async (req: NextRequest) => {
           userId: comment?.userId,
         },
       });
-      if (!notification || session?.user.id !== comment?.userId) {
+      if (!notification && session?.user.id !== comment?.userId) {
         await prisma.notifications.create({
           data: {
             notificationBy: session?.user.id!,

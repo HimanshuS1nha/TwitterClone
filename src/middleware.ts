@@ -9,5 +9,6 @@ export const config = {
     "/create-tweet",
     "/profile/:id*",
     "/tweet/:id*",
+    "/api/:api*",
   ],
 };
