@@ -16,7 +16,7 @@ model Users {
   name            String
   email           String   @unique
   username        String   @unique
-  password        String?
+  password        String
   image           String?
   bannerImage     String?
   bio             String?
