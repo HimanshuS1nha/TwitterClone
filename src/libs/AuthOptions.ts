@@ -74,6 +74,7 @@ export const AuthOptions: NextAuthOptions = {
             name: token.name!,
             email: token.email!,
             username: "randomname",
+            password: "",
           },
         });
         return {
