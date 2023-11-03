@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const POST = async (req: NextRequest) => {
   try {
-    const { id } = await req.json();
+    const { id, userId } = await req.json();
 
     const tweet = await prisma.tweets.findUnique({
       where: {
@@ -11,15 +11,19 @@ export const POST = async (req: NextRequest) => {
       },
     });
 
-    console.log(tweet);
-
     const user = await prisma.users.findUnique({
+      where: {
+        id: userId,
+      },
+    });
+
+    const tweetUser = await prisma.users.findUnique({
       where: {
         id: tweet?.userId,
       },
     });
 
-    return NextResponse.json({ user }, { status: 200 });
+    return NextResponse.json({ user, tweetUser }, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { error: "Some error occured. Please try again later!" },
