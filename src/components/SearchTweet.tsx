@@ -14,7 +14,7 @@ import toast from "react-hot-toast";
 const SearchTweets = ({ tweet }: { tweet: Tweets }) => {
   const session = useSession();
 
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ["getuser", "search", tweet.userId],
     queryFn: async () => {
       const { data } = await axios.post("/api/getuser", { id: tweet.userId });

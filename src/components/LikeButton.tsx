@@ -4,7 +4,7 @@ import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import axios, { AxiosError } from "axios";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Comments, Tweets } from "@prisma/client";
 
 const LikeButton = ({
