@@ -17,7 +17,7 @@ const SearchHeader = ({ onChange }: SearchHeaderProps) => {
         src={session.data?.user.image || "/user.jpg"}
         width={50}
         height={50}
-        className="object-contain rounded-full w-[50px] h-[50px]"
+        className="rounded-full w-[50px] h-[50px]"
         alt="USER"
       />
       <Input
