@@ -33,7 +33,7 @@ export const POST = async (req: NextRequest) => {
       await prisma.notifications.deleteMany({
         where: {
           userId: comment.userId,
-          content: `${session?.user?.name} has followed you`,
+          content: `${session?.user.name} liked your comment : ${comment?.content}`,
           notificationBy: session?.user.id!,
         },
       });
