@@ -22,7 +22,7 @@ const FollowingPage = async ({ params: { id } }: ParamsProps) => {
     <>
       <Header title="Following" showIcon />
 
-      {session?.user.following?.map((id) => {
+      {user?.following?.map((id) => {
         return <Follow id={id} key={id} />;
       })}
     </>
